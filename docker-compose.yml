@@ -1,0 +1,13 @@
+version: "3"
+services:
+  jupyter-notebook:
+    image: jupyter/minimal-notebook:latest
+    ports:
+      - "8888:8888"  
+    volumes:
+      - "/home/jeffrey/docker-volumes/rtde-dev:/home/jovyan/work"
+    networks:
+      - rtde-dev-network
+networks:
+  rtde-dev-network:
+
