@@ -34,6 +34,14 @@ services:
       - "5601:5601"
     networks:
       - rtde-dev-network
+  logstash:
+    image: docker.elastic.co/logstash/logstash:5.4.3
+    volumes:
+      - "./logstash/pipeline:/usr/share/logstash/pipeline/"
+      - "./logstash/settings/logstash.yaml:/usr/share/logstash/config/logstash.yml"
+    networks:
+      - rtde-dev-network
+     
 networks:
   rtde-dev-network:
 
